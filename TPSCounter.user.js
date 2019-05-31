@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  try to take over the world!
+// @version      1.0
+// @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        http://mc.villagercraft.nl:8050/
 // @grant        none
