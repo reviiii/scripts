@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
-// @match        http://mc.villagercraft.nl:8050/
+// @match        http://mc.villagercraft.nl:8050/*
 // @grant        none
 // ==/UserScript==
 (function() {
