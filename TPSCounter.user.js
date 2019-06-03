@@ -7,6 +7,7 @@
 // @match        http://mc.villagercraft.nl:8050/*
 // @grant        none
 // ==/UserScript==
+// als je de dynmap wilt overclocken kan je dynmap.options.updaterate veranderen
 (function() {
 var checkInterval = setInterval(checkLoaded, 100);
 function checkLoaded() {
