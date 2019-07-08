@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    http://tampermonkey.net/
-// @version      1.4
+// @version      1.5
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        http://mc.villagercraft.nl:8050/*
@@ -35,6 +35,7 @@ $(dynmap).bind('worldupdated', function(event, update) {
 });
 
 window.TPSCounter = {
+    arrSize: 10000,
     dateArr: [],
     timeArr: [],
     oldCounter: 0,
@@ -52,8 +53,9 @@ window.TPSCounter = {
         }
         this.timeArr[this.newCounter] = time;
         var newDate = d-this.period;
-        while (this.dateArr[this.oldCounter]<newDate) {
+        while (this.dateArr[this.oldCounter]<newDate&&this.dateArr[this.oldCounter+1]>this.dateArr[this.oldCounter]) {
             this.oldCounter++;
+            this.oldCounter %= this.arrSize;
         }
         var tps = Math.round(((this.timeArr[this.newCounter]-this.timeArr[this.oldCounter])/(this.dateArr[this.newCounter]-this.dateArr[this.oldCounter]))*100000)/100;
         if (this.newCounter>0) {
@@ -61,6 +63,7 @@ window.TPSCounter = {
             // document.getElementById("tps").title = ((this.dateArr[this.newCounter]-this.dateArr[this.oldCounter])/1000).toString()+"s";
         }
         this.newCounter++;
+        this.newCounter %= this.arrSize;
     }
 }
 }
