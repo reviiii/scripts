@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TPSCounter
-// @namespace    http://tampermonkey.net/
-// @version      1.8
+// @namespace    https://github.com/reviiii/scripts
+// @version      1.9
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        http://mc.villagercraft.nl:8050/*
@@ -34,12 +34,12 @@ $(dynmap).bind('worldupdated', function(event, update) {
     window.TPSCounter.update(update.servertime, update.timestamp);
 });
 
-var arrSize = 1000000;
+var arrSize = 100000;
 window.TPSCounter = {
     arrSize: arrSize,
     dateArr: new Float64Array(arrSize),
     timeArr: new Float64Array(arrSize),
-    oldCounter: 0,
+    oldCounter: arrSize-1, // prevent triggering of underflow detection
     newCounter: 0,
     day: 0,
     period: 60000,
@@ -53,15 +53,21 @@ window.TPSCounter = {
             time += 24000;
         }
         this.timeArr[this.newCounter] = time;
+        if (this.oldCounter===this.newCounter) { // make sure that oldCounter  doesn't underflow
+            this.oldCounter++;
+            this.oldCounter %= this.arrSize;
+        }
         var newDate = d-this.period;
-        while (this.dateArr[this.oldCounter]<newDate&&this.dateArr[(this.oldCounter+1)%this.arrSize]>this.dateArr[this.oldCounter]) {
+        while (this.dateArr[this.oldCounter]<newDate) {
             this.oldCounter++;
             this.oldCounter %= this.arrSize;
         }
         var tps = Math.round(((this.timeArr[this.newCounter]-this.timeArr[this.oldCounter])/(this.dateArr[this.newCounter]-this.dateArr[this.oldCounter]))*100000)/100;
-        if (this.newCounter>0) {
+        if (!Number.isNaN(tps)) {
             document.getElementById("tps").innerHTML = tps.toString();
             // document.getElementById("tps").title = ((this.dateArr[this.newCounter]-this.dateArr[this.oldCounter])/1000).toString()+"s";
+        } else {
+            document.getElementById("tps").innerHTML = "--"
         }
         this.newCounter++;
         this.newCounter %= this.arrSize;
