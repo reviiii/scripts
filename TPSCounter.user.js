@@ -4,7 +4,7 @@
 // @version      2.0
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
-// @match        http://map.villagercraft.nl:8050/*
+// @match        https://map.villagercraft.nl/*
 // @grant        none
 // ==/UserScript==
 // als je de dynmap wilt overclocken kan je dynmap.options.updaterate veranderen
