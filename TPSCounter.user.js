@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    https://github.com/reviiii/scripts
-// @version      3.1
+// @version      3.1.1
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/*
@@ -34,7 +34,7 @@ gui.id = "TPSCounter_GUI"
 gui.style = "width: 184px;height: 54px;visibility: hidden;position: absolute;top: calc(50vh - 35px);left: calc(50vw - 100px);background-color: rgba(0,0,0,0.75);padding: 8px;"
 var optionSelect = document.createElement("select");
 optionSelect.onchange = function() {this.parentElement.children[1].value=window.TPSCounter[this.value];};
-optionSelect.innerHTML = '<option value="period">Tijdsduur meting (ms)</option><option value="precision">Afronding (op 1/n)</option>'
+optionSelect.innerHTML = '<option value="period">Max. tijdsduur meting (ms)</option><option value="precision">Afronding (op 1/n)</option>'
 gui.appendChild(optionSelect);
 var valueInput = document.createElement("input");
 valueInput.oninput = function() {
