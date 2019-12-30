@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    https://github.com/reviiii/scripts
-// @version      2.0.1
+// @version      3.0
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/*
@@ -29,6 +29,17 @@ coord.appendChild(document.createElement("br"));
 coord.appendChild(label);
 coord.appendChild(document.createElement("br"));
 coord.appendChild(tpsvalue);
+var gui = document.createElement("div");
+gui.id = "TPSCounter_GUI"
+gui.style = "width: 184px;height: 54px;visibility: hidden;position: absolute;top: calc(50vh - 35px);left: calc(50vw - 100px);background-color: rgba(0,0,0,0.75);padding: 8px;"
+var optionSelect = document.createElement("select");
+optionSelect.onchange = function() {this.parentElement.children[1].value=window.TPSCounter[this.value];};
+optionSelect.innerHTML = '<option value="period">Tijdsduur meting (ms)</option><option value="precision">Afronding (op 1/n)</option>'
+gui.appendChild(optionSelect);
+var valueInput = document.createElement("input");
+valueInput.oninput = function() {window.TPSCounter.setOption(this.parentElement.children[0].value, Number(this.parentElement.children[1].value));};
+gui.appendChild(valueInput);
+$("#mcmap")[0].appendChild(gui);
 
 $(dynmap).bind('worldupdated', function(event, update) {
     window.TPSCounter.update(update.servertime, update.timestamp);
@@ -103,7 +114,7 @@ window.TPSCounter = {
                 break;
         }
     },
-    toggleGUI: function() { // currently no GUI element is present
+    toggleGUI: function() {
         if (document.getElementById("TPSCounter_GUI").style.visibility==="visible") {
             document.getElementById("TPSCounter_GUI").style.visibility = "hidden";
         } else {
@@ -111,5 +122,7 @@ window.TPSCounter = {
         }
     }
 } // end of object
+valueInput.value = window.TPSCounter.period;
+label.onclick = window.TPSCounter.toggleGUI;
 } // end of function start
 })()
