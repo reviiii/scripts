@@ -46,6 +46,7 @@ valueInput.oninput = function() {
     }
 };
 gui.appendChild(valueInput);
+gui.appendChild(document.createElement("span"));
 $("#mcmap")[0].appendChild(gui);
 
 $(dynmap).bind('worldupdated', function(event, update) {
