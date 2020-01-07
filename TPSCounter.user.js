@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    https://github.com/reviiii/scripts
-// @version      3.1.1
+// @version      3.2
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/*
@@ -12,7 +12,7 @@
 var checkInterval = setInterval(checkLoaded, 100);
 function checkLoaded() {
     if (document.getElementsByClassName("coord-control").length>0) {
-       setTimeout(start, 100);
+       start();
        clearInterval(checkInterval);
     }
 }
@@ -33,7 +33,10 @@ var gui = document.createElement("div");
 gui.id = "TPSCounter_GUI"
 gui.style = "width: 184px;height: 54px;visibility: hidden;position: absolute;top: calc(50vh - 35px);left: calc(50vw - 100px);background-color: rgba(0,0,0,0.75);padding: 8px;"
 var optionSelect = document.createElement("select");
-optionSelect.onchange = function() {this.parentElement.children[1].value=window.TPSCounter[this.value];};
+optionSelect.onchange = function() {
+    this.parentElement.children[1].value=window.TPSCounter[this.value];
+    this.parentElement.children[2].textContent = "";
+};
 optionSelect.innerHTML = '<option value="period">Max. tijdsduur meting (ms)</option><option value="precision">Afronding (op 1/n)</option>'
 gui.appendChild(optionSelect);
 var valueInput = document.createElement("input");
@@ -83,7 +86,7 @@ window.TPSCounter = {
         var tps = Math.round(((this.timeArr[this.newCounter]-this.timeArr[this.oldCounter])/(this.dateArr[this.newCounter]-this.dateArr[this.oldCounter]))*1000*this.precision)/this.precision;
         if (!Number.isNaN(tps)) {
             document.getElementById("tps").innerHTML = tps.toString();
-            // document.getElementById("tps").title = ((this.dateArr[this.newCounter]-this.dateArr[this.oldCounter])/1000).toString()+"s";
+            document.getElementById("tps").title = ((this.dateArr[this.newCounter]-this.dateArr[this.oldCounter])/1000).toString()+"s";
         } else {
             document.getElementById("tps").innerHTML = "--"
         }
