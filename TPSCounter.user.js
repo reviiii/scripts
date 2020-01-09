@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    https://github.com/reviiii/scripts
-// @version      3.2.0
+// @version      3.3.0
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/*
@@ -31,7 +31,7 @@ coord.appendChild(document.createElement("br"));
 coord.appendChild(tpsvalue);
 var gui = document.createElement("div");
 gui.id = "TPSCounter_GUI"
-gui.style = "width: 184px;height: 54px;visibility: hidden;position: absolute;top: calc(50vh - 35px);left: calc(50vw - 100px);background-color: rgba(0,0,0,0.75);padding: 8px;"
+gui.style = "width: 184px;height: 54px;opacity: 0;pointer-events: none;position: absolute;top: calc(50vh - 35px);left: calc(50vw - 100px);background-color: rgba(0,0,0,0.75);padding: 8px;transition: opacity 0.1s ease-in-out 0s;"
 var optionSelect = document.createElement("select");
 optionSelect.onchange = function() {
     this.parentElement.children[1].value=window.TPSCounter[this.value];
@@ -126,10 +126,13 @@ window.TPSCounter = {
         }
     },
     toggleGUI: function() {
-        if (document.getElementById("TPSCounter_GUI").style.visibility==="visible") {
-            document.getElementById("TPSCounter_GUI").style.visibility = "hidden";
+        var gui = document.getElementById("TPSCounter_GUI");
+        if (gui.style.opacity==="1") {
+            gui.style.opacity = "0";
+            gui.style.pointerEvents = "none"
         } else {
-            document.getElementById("TPSCounter_GUI").style.visibility = "visible";
+            gui.style.opacity = "1";
+            gui.style.pointerEvents = "";
         }
     }
 } // end of object
