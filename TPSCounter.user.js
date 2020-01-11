@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    https://github.com/reviiii/scripts
-// @version      3.3.0
+// @version      3.4.0
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/*
@@ -9,11 +9,11 @@
 // ==/UserScript==
 // als je de dynmap wilt overclocken kan je dynmap.options.updaterate veranderen
 (function() {
-var checkInterval = setInterval(checkLoaded, 100);
+$(dynmap).bind('worldupdating', checkLoaded)
 function checkLoaded() {
-    if (document.getElementsByClassName("coord-control").length>0) {
-       start();
-       clearInterval(checkInterval);
+    if (document.getElementsByClassName("coord-control").length>0) { // this should always evaluate to true
+        start();
+        $(dynmap).unbind('worldupdating', checkLoaded)
     }
 }
 function start() {
