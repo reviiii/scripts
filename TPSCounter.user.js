@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    https://github.com/reviiii/scripts
-// @version      3.4.0
+// @version      3.4.1
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/*
@@ -19,7 +19,7 @@ function checkLoaded() {
 function start() {
 var label = document.createElement("span");
 label.innerHTML = 'TPS:';
-label.className = "coord-control-label"
+label.className = "coord-control-label";
 var tpsvalue = document.createElement("span");
 tpsvalue.innerHTML = "--";
 tpsvalue.className = "coord-control-value";
@@ -86,10 +86,10 @@ window.TPSCounter = {
         var tps = Math.round(((this.timeArr[this.newCounter]-this.timeArr[this.oldCounter])/(this.dateArr[this.newCounter]-this.dateArr[this.oldCounter]))*1000*this.precision)/this.precision;
         if (!Number.isNaN(tps)) {
             document.getElementById("tps").innerHTML = tps.toString();
-            document.getElementById("tps").title = ((this.dateArr[this.newCounter]-this.dateArr[this.oldCounter])/1000).toString()+"s";
         } else {
             document.getElementById("tps").innerHTML = "--"
         }
+        document.getElementById("tps").title = ((this.dateArr[this.newCounter]-this.dateArr[this.oldCounter])/1000).toString()+"s";
         this.newCounter++;
         this.newCounter %= this.arrSize;
     },
@@ -123,6 +123,9 @@ window.TPSCounter = {
                 this.precision = value;
                 return "precision set to "+value.toString()+" ("+Math.log10(value).toString()+" digits)";
                 break;
+            default:
+                throw new Error("Unable to set option");
+                break;
         }
     },
     toggleGUI: function() {
@@ -138,5 +141,6 @@ window.TPSCounter = {
 } // end of object
 valueInput.value = window.TPSCounter.period;
 label.onclick = window.TPSCounter.toggleGUI;
+label.ondblclick = e=>e.stopPropagation();
 } // end of function start
 })();
