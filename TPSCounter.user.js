@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    https://github.com/reviiii/scripts
-// @version      3.4.1
+// @version      3.4.2
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/*
@@ -9,6 +9,7 @@
 // ==/UserScript==
 // als je de dynmap wilt overclocken kan je dynmap.options.updaterate veranderen
 (function() {
+var $=window.$, dynmap=window.dynmap;
 $(dynmap).bind('worldupdating', checkLoaded)
 function checkLoaded() {
     if (document.getElementsByClassName("coord-control").length>0) { // this should always evaluate to true
@@ -43,9 +44,11 @@ var valueInput = document.createElement("input");
 valueInput.oninput = function() {
     this.parentElement.children[2].textContent = "";
     try {
-        window.TPSCounter.setOption(this.parentElement.children[0].value, Number(this.parentElement.children[1].value));
+        this.parentElement.children[2].textContent=window.TPSCounter.setOption(this.parentElement.children[0].value, Number(this.parentElement.children[1].value));
+        this.parentElement.children[2].style.color="#0f0";
     } catch (err) {
         this.parentElement.children[2].textContent=err.message;
+        this.parentElement.children[2].style.color="#f00";
     }
 };
 gui.appendChild(valueInput);
@@ -74,7 +77,7 @@ window.TPSCounter = {
             time += 24000;
         }
         this.timeArr[this.newCounter] = time;
-        if (this.oldCounter===this.newCounter) { // make sure that oldCounter  doesn't underflow
+        if (this.oldCounter===this.newCounter) { // make sure that oldCounter doesn't underflow
             this.oldCounter++;
             this.oldCounter %= this.arrSize;
         }
@@ -117,7 +120,7 @@ window.TPSCounter = {
                 } else {
                     this.oldCounter = this.newCounter
                 }
-                return "period set to "+value.toString()+" ms and oldCounter to "+this.oldCounter;
+                return "period set to "+value.toString()+" ms";
                 break;
             case "precision":
                 this.precision = value;
