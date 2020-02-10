@@ -7,6 +7,8 @@
 // @match        https://map.villagercraft.nl/*
 // @grant        none
 // ==/UserScript==
+// currently broken, do not update
+
 // als je de dynmap wilt overclocken kan je dynmap.options.updaterate veranderen
 (function() {
 var $=window.$, dynmap=window.dynmap;
