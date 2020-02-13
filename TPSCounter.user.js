@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    https://github.com/reviiii/scripts
-// @version      3.4.4
+// @version      3.4.5
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/*
@@ -136,10 +136,11 @@ window.TPSCounter = {
         var gui = document.getElementById("TPSCounter_GUI");
         if (gui.style.opacity==="1") {
             gui.style.opacity = "0";
-            gui.style.pointerEvents = "none"
+            gui.style.pointerEvents = "none";
         } else {
             gui.style.opacity = "1";
             gui.style.pointerEvents = "";
+            gui.children[2].textContent = "";
         }
     }
 } // end of object
