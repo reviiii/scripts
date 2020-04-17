@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name         TPSCounter
 // @namespace    https://github.com/reviiii/scripts
-// @version      3.4.5
+// @version      3.4.6
 // @description  Voegt een TPSCounter toe aan de dynmap van villagercraft
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/*
+// @match        https://vmap.villagercraft.nl/*
 // @grant        none
 // ==/UserScript==
 
