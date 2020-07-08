@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         PlayerCoords
 // @namespace    https://github.com/reviiii/scripts
-// @version      0.1.4
+// @version      0.1.5
 // @description  Voegt coördinaten toe aan de playermarkers (de y-coördinaat is de y-coördinaat van het hoofd, niet van de voeten)
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/*
@@ -21,9 +21,8 @@
         }
         $(dynmap).bind('playeradded', main);
         $(dynmap).bind('playerupdated', main);
-        var css = ".dynmap .playerNameNoHealth { top: -16px }"
         var style = document.createElement("style")
-        style.innerHTML = css
+        style.innerHTML = ".dynmap .playerNameNoHealth { top: -19px }"
         document.head.appendChild(style)
     }
 })();
