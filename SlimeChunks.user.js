@@ -10,7 +10,7 @@
 
 (function() {
     'use strict';
-    var markerURL = "file:///%25UserProfile%25/Downloads/"
+    var markerURL = "http://localhost"
     var $=window.$, dynmap=window.dynmap;
     $(dynmap).bind('worldupdating', start)
     function start() {
