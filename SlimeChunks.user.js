@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slime Chunks
 // @namespace    https://github.com/reviiii/scripts
-// @version      0.1.2
+// @version      0.1.3
 // @description  Adds slimechunk layer to the dynmap
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/
@@ -10,6 +10,7 @@
 
 (function() {
     'use strict';
+    var markerURL = "https://example.com/"
     var $=window.$, dynmap=window.dynmap;
     $(dynmap).bind('worldupdating', start)
     function start() {
@@ -44,7 +45,7 @@
 
         // add the slimechunksmarker
         let oldMarkerURL = dynmap.options.url.markers
-        dynmap.options.url.markers="https://raw.githubusercontent.com/reviiii/scripts/master/"
+        dynmap.options.url.markers = markerURL
         $(dynmap).trigger("component.markers", {"msg":"markerupdated","x":8,"y":68,"z":8,"id":"slimeChunks","label":"","icon":"slimechunks","set":"bigMarkers","markup":false,"desc":null,"dim":"Big","minzoom":-1,"maxzoom":-1,"ctype":"markers","type":"component","timestamp":Date.now()})
         dynmap.options.url.markers=oldMarkerURL
 
