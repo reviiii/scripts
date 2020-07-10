@@ -10,7 +10,7 @@
 
 (function() {
     'use strict';
-    var markerURL = "https://raw.githubusercontent.com/reviiii/scripts/master/"
+    var markerURL = "file:///%25UserProfile%25/Downloads/"
     var $=window.$, dynmap=window.dynmap;
     $(dynmap).bind('worldupdating', start)
     function start() {
