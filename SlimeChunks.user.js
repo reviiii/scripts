@@ -8,6 +8,8 @@
 // @grant        none
 // ==/UserScript==
 
+// note: je moet op localhost een server hebben die een 1001x1001 chunks plaatje van de slimechunks geeft op /_markers_/slimechunks.png
+
 (function() {
     'use strict';
     var markerURL = "http://localhost/"
