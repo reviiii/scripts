@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slime Chunks
 // @namespace    https://github.com/reviiii/scripts
-// @version      0.1.3
+// @version      0.1.4
 // @description  Adds slimechunk layer to the dynmap
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/
@@ -10,7 +10,7 @@
 
 (function() {
     'use strict';
-    var markerURL = "https://example.com/"
+    var markerURL = "https://raw.githubusercontent.com/reviiii/scripts/master/_markers_/"
     var $=window.$, dynmap=window.dynmap;
     $(dynmap).bind('worldupdating', start)
     function start() {
