@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Slime Chunks
 // @namespace    https://github.com/reviiii/scripts
-// @version      0.1.6
+// @version      0.2.1
 // @description  Adds slimechunk layer to the dynmap
 // @author       Reviiii
 // @match        https://map.villagercraft.nl/*
