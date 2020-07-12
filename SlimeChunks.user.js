@@ -26,7 +26,7 @@
         function updateBigMarkerStyle() {
             var size = 1001*2/dynmap.map.getZoomScale()
             bigMarkerStyle.innerHTML = `.dynmap .mapMarker .markerIconBig {
-                transform: translate(-50%, -50%);
+                /*transform: translate(-50%, -50%);*/
                 width: ${size}px;
                 height: ${size}px;
                 pointer-events: none;
@@ -48,7 +48,7 @@
         // add the slimechunksmarker
         let oldMarkerURL = dynmap.options.url.markers
         dynmap.options.url.markers = markerURL
-        $(dynmap).trigger("component.markers", {"msg":"markerupdated","x":8,"y":68,"z":8,"id":"slimeChunks","label":"","icon":"slimechunks","set":"bigMarkers","markup":false,"desc":null,"dim":"Big","minzoom":-1,"maxzoom":-1,"ctype":"markers","type":"component","timestamp":Date.now()})
+        $(dynmap).trigger("component.markers", {"msg":"markerupdated","x":-8000,"y":68,"z":-8000,"id":"slimeChunks","label":"","icon":"slimechunks","set":"bigMarkers","markup":false,"desc":null,"dim":"Big","minzoom":-1,"maxzoom":-1,"ctype":"markers","type":"component","timestamp":Date.now()})
         dynmap.options.url.markers=oldMarkerURL
 
         // make sure all bigMarkers arent clickable
