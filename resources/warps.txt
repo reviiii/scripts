@@ -1,4 +1,6 @@
-# Lijst van alle warps op 5 augustus 2021
+# Lijst van alle warps op 11 oktober 2021
+____Davids Shop____	-12624.742 84 11785.187
+__KaasShops__	-6213.742 67 -5045.492
 _Abbey Town_	-1183.405 62.9375 -1311.457
 _Beste (Ligt eraan wat beste is) XP FARM	-1124.3 79 -2886.458
 _Spoor_	-3667.073 64 -6258.307
@@ -6,12 +8,14 @@ A	1452.93 104 6680.255
 A_Fishing_Warp	-4141.033 64 -1914.058
 AdventureIsland	-9606.529 75 -2856.517
 Afkloud	3878.5 91 6707.5
+Arryn SpiderSpawn	-11195.306 12 7614.283
 Artmap	-4200.701 20.5 4717.761
 ArtMuseum	-2612.997 64 2859.986
+Azura Coast	-443.318 64 -11448.348
 Beds	-2385.548 102 -3229.483
 BELland	3155.902 62 -667.086
-bergvoormlgwaterbucket	6699.294 225 4499.365
 blaze	3497.047 24 -3031.897
+BookShop	-8836.4 8.5 9021.294
 BuddhaTempel	1387.229 72 380.422
 BuyYourBlocks	-4050.021 131 -646.879
 Cake	-776.136 25 -3539.3
@@ -39,7 +43,7 @@ Foxie	-2686.996 64 340.685
 Free potion brewer	-304.721 67 -5631.431
 Free Sugarcane	6527.988 67 -430.595
 Free_Books	-4177.5 20.5 4745.5
-FreePork	6597.441 37.125 -4831.95
+gardianfarm	14733.159 59 6482.385
 Giveaway	-2218.16 71 1819.573
 Globalfarm	909.573 78 3616.353
 Grand_Café	-2996.873 74 1022.562
@@ -48,21 +52,24 @@ Gravel	-1127.411 102 1404.594
 Grote snoepwinkel	2098.024 82 -2761.013
 Harbour	-5394.773 67 5404.875
 HierKrijgenDierenGeenPijn	5998.692 126 -3925.473
+hoi	-1616.44 118 -3965.92
 Homados Colloseum	-8478.511 86 -8273.462
-Home	-11148.518 75.5625 7542.760
 HuisTenBosch	-2529.708 64 -6814.547
 Illegale_Kroeg	5906.288 51 -4135.399
 Inrichten	-2417.645 67 -3597.578
 Italiaans dorp	-2009.493 64 3907.475
 Jillapark	3070.392 68 -4632.717
 Jillatown	6388.903 63 2584.982
-kaas is de beste	-1626.549 118 3959.216
+Kaas	11752.621 66 15231.709
+KaasShopEiland!	-6229.136 69 -5083.456
+KaasShops	-5171.533 63 -5035.527
 Kerst Village	6267.998 64 4370.124
 Keukengang	4631.927 130 1842.513
-logo	4908.009 67 287.336
+LarsShop	-9114.257 70 9242.369
 Maksy	-2224.956 71 1819.646
 MartelMachine	3715.413 235 354.168
 Mawksy	-2312.551 11 1836.439
+MendingBoekjes	-5779.502 6 -6920.45
 MEnsen !!	-6593.717 50 -7130.83
 Mesa_Town	1788.554 88 6086.569
 Midusa	-1155.351 71 2200.577
@@ -75,14 +82,16 @@ Netherplanten	2235.396 38 -377.004
 New_Orleans	-5692.623 66 -5603.245
 Nieuw-Berlijn(stad)	-6588.498 75.5 -7094.684
 Nog geen outlawproject	2223.757 69 7427.887
+Onelittle	-679.316 49 -13685.863
 Paarden_race_baan	-4406.907 70 -1097.293
-Palais du Prisma	3718.163 64 1895.7
 Parijs	3481.002 69 -3064.017
 Pigman	2261.251 38 -361.098
-pillage	-202.916 69 6721.083
 Pokemon	-109.199 65 -3944.286
 Potion Brewer	6009.101 68 -3986.807
+Potions	-6160.587 73 -5071.75
 Pretpark	-567.707 63 -4885.431
+PrismaPalace	3718.163 64 1895.7
+Project Alec	-687.526 68.93750 -13669.727
 PurpleGang	2594.136 11 2715.421
 QR-Code_:-)_	-11060.724 64 -12127.984
 Rail	-3667.073 64 -6528.307
@@ -92,6 +101,8 @@ RCEWolf	3411.271 68 2510.752
 RuilMachine	6026.275 70.24341 -3965.791
 Schietbaan	-566.27 63 -4875.135
 Shop	-2311.175 33 1836.576
+Shops	-6163.556 72 -5074.617
+Silence	-4980.549 63 8553.764
 Sjoerd	-5809.867 63 -6932.98
 Slime	-2314.681 33 1836.509
 SloopBedrijf	6028.486 69 -3949.648
@@ -99,6 +110,8 @@ Spawner_Room	30.247 50 -2915.133
 Spawners	3051.32 44 3395.102
 sponge heb jij coral vissen voor me	-3558.237 61.70177 -870.517
 Spoor	-3655.377 64 -6552.521
+Sqthers Shop	3665.451 69 -5770.895
+stad	-8984.856 66.0625 9251.56
 StrangerMuseum	5626.434 68.6875 7750.425
 String	2252.511 6 -337.478
 Sugarcane	2234.663 38 -382.148
@@ -109,14 +122,18 @@ Toon Fabrics	1722.225 64 -1825.519
 Toon Fabrics Chrashed Truck	-2139.4 63 3051.407
 Townhall	-8479.437 72 -8157.336
 TreeFarm(XL)	7008.428 101 854.027
+trouw	-8840.259 64.0625 9191.983
 UpHouse	5383.876 136 -4067.774
 VillagerCraftTown	2173.199 68 1654.3
 Vissen	-285.123 66 2466.889
+VoteShop	-6193.498 69 -5092.349
 vuurtoren	-3885.478 86 -33.356
-waterstad	-46.526 63 8950.676
 Winkel	-2087.648 68 2665.684
 Winkelcentrum	-559.450 62.9375 -4924.952
+Winkels	-6218.828 69 -5071.832
 Wolfs grote snoepwinkel	2098.794 82 -2763.295
+Xp_Bird	-5948.304 61 -3059.803
 XP_farm	2870.585 30 1731.876
 XP_SUPER	-3353.108 25 1822.731
+xWoffel	4075.455 11 -5697.536
 Zand_Dorp	-4296.963 64 1805.127
